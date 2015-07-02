@@ -6,12 +6,38 @@ body {
   background-color: #eee;
   font-family: fantasy; }
 
-.mason-row-container {
+.mason-row-container .mason-row {
+  width: 100%;
+  height: 300px;
   display: flex;
-  flex-flow: row wrap;
-  align-items: stretch; }
+  flex-flow: column wrap;
+  align-items: stretch;
+  justify-content: space-between;
+  margin-bottom: 10px; }
   .mason-row-container .mason-row .mason-item {
     display: inline-block;
-    background-color: #ffa; }
+    overflow: hidden; }
+    .mason-row-container .mason-row .mason-item img {
+      width: 100%;
+      object-fit: cover; }
+  .mason-row-container .mason-row#mason-2up .mason-item {
+    background-color: #faf;
+    width: 45%; }
+  .mason-row-container .mason-row#mason-3up .mason-item {
+    background-color: #ffa;
+    width: 22%; }
+    .mason-row-container .mason-row#mason-3up .mason-item:nth-child(1) {
+      width: 45%; }
+  .mason-row-container .mason-row#mason-4up .mason-item {
+    background-color: #aff;
+    width: 22%; }
+
+@media screen and (max-width: 960px) {
+  #mason-3up .mason-item:nth-child(1) {
+    order: 2; }
+  #mason-3up .mason-item:nth-child(2) {
+    order: 3; }
+  #mason-3up .mason-item:nth-child(3) {
+    order: 1; } }
 
 /*# sourceMappingURL=compiled.css.map */
