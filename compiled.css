@@ -1,0 +1,17 @@
+* {
+  text-align: center; }
+
+body {
+  margin: 0 auto;
+  background-color: #eee;
+  font-family: fantasy; }
+
+.mason-row-container {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: stretch; }
+  .mason-row-container .mason-row .mason-item {
+    display: inline-block;
+    background-color: #ffa; }
+
+/*# sourceMappingURL=compiled.css.map */
