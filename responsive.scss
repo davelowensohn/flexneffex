@@ -1,0 +1,60 @@
+// RESPONSIVE: BREAKPOINTS
+
+.responsive-row-container {
+  width: $xlarge;
+  margin: 0 auto;
+
+  .responsive-row {
+    margin-bottom: 10px;
+
+    &.r2up {
+      height: $large;
+      .row-item {
+        height: $large;
+        width: $large;
+      }
+    }
+
+    &.r3up {
+      height: $medium;
+      .row-item {
+        height: $medium;
+        width: $medium;
+      }
+    }
+
+    &.r4up {
+      height: $small;
+      .row-item {
+        height: $small;
+        width: $small;
+      }
+    }
+
+    .row-item {
+      position: relative;
+      overflow: hidden;
+      display: inline-block;
+      float: left;
+
+      @for $i from 1 through 2 {
+        &:nth-child(#{$i}) {
+          img { @include square-crop; }
+        }
+      }
+
+      @for $i from 3 through 4 {
+        &:nth-child(#{$i}) {
+          height: 45%;
+          img { @include wide-crop; }
+        }
+      }
+
+      span {
+        position: relative;
+        z-index: 1000;
+        top: $medium;
+      }
+    }
+  }
+}

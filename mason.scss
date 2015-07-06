@@ -1,0 +1,61 @@
+// MASON: FLEXBOXES (Deprecated, change `responsive` to `mason` if needed)
+
+.mason-row-container {
+
+  .mason-row {
+    margin: 5px auto;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: stretch;
+    justify-content: space-between;
+
+    .mason-item {
+      display: inline-block;
+      overflow: hidden;
+
+      img {
+        object-fit: cover;
+      }
+    }
+
+    &#mason-2up {
+      .mason-item {
+        background-color: #faf;
+        height: $large;
+        width: $large;
+      }
+    }
+
+    &#mason-3up {
+      .mason-item {
+        background-color: #ffa;
+        height: $medium;
+        width: $medium;
+      }
+    }
+
+    &#mason-4up {
+      .mason-item {
+        background-color: #aff;
+        height: $small;
+        width: $small;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 960px) {
+  #mason-3up {
+    .mason-item {
+      &:nth-child(1) {
+        order: 2;
+      }
+      &:nth-child(2) {
+        order: 3;
+      }
+      &:nth-child(3) {
+        order: 1;
+      }
+    }
+  }
+}
